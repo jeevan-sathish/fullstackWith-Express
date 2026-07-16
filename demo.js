@@ -103,3 +103,46 @@
 // }
 
 // console.log(group);
+
+//debouncing
+
+// cache implimentation
+// let cache = {};
+// function add(a, b) {
+//   let key = `${a}+${b}`;
+//   if (cache[key]) {
+//     console.log("from cache");
+//     return cache[key];
+//   } else {
+//     console.log("from outer cache");
+//     let value = a + b;
+//     cache[key] = value;
+//     return value;
+//   }
+// }
+
+// console.log(add(2, 3));
+// console.log(add(2, 3));
+
+// LRU least recently usedccahe
+
+const lru = {};
+let count = 0;
+
+function sub(a, b) {
+  const key = `${a}-${b}`;
+  if (!lru[key]) {
+    lru[key] = [];
+  }
+  count++;
+  let value = a - b;
+
+  let data = { value, count };
+  lru[key].push(data);
+  return value;
+}
+console.log(lru);
+console.log(sub(3, 4));
+console.log(sub(3, 4));
+console.log(sub(3, 4));
+console.log(lru);
