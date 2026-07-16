@@ -1,6 +1,7 @@
 import { useState, type ChangeEvent } from "react";
 
 const App: React.FC = () => {
+  const SERVER_URL = import.meta.env.VITE_SERVER_URL;
   const [id, setId] = useState<number>();
   const [message, setMessage] = useState<string>("");
   const [file, setFile] = useState<File | null>(null);
@@ -37,7 +38,7 @@ const App: React.FC = () => {
       }
       const formdata = new FormData();
       formdata.append("image", file);
-      const response = await fetch("http://localhost:3000/api/upload", {
+      const response = await fetch(`${SERVER_URL}/api/upload`, {
         method: "POST",
         headers: {
           Authorization: "jeevan",
