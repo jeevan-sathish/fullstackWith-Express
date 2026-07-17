@@ -244,29 +244,54 @@
 
 // console.log(count);
 
-const string = "this is jeevan helecopter";
+// const string = "this is jeevan helecopter";
 
-let max = 0;
-let current = 0;
-var start = 0;
-var maxstart = 0;
+// let max = 0;
+// let current = 0;
+// var start = 0;
+// var maxstart = 0;
 
-for (let i = 0; i < string.length; i++) {
-  if (string[i] === " ") {
-    if (current > max) {
-      max = current;
-      maxstart = start;
-    }
-    current = 0;
-    start = i + 1;
-  } else {
-    current++;
-  }
-}
+// for (let i = 0; i < string.length; i++) {
+//   if (string[i] === " ") {
+//     if (current > max) {
+//       max = current;
+//       maxstart = start;
+//     }
+//     current = 0;
+//     start = i + 1;
+//   } else {
+//     current++;
+//   }
+// }
 
-if (current > max) {
-  max = current;
-  maxstart = start;
-}
+// if (current > max) {
+//   max = current;
+//   maxstart = start;
+// }
 
-console.log(string.substring(maxstart, maxstart + max));
+// console.log(string.substring(maxstart, maxstart + max));
+
+const product = [
+  {
+    name: "apple",
+    price: 300,
+  },
+  {
+    name: "mango",
+    price: 350,
+  },
+  {
+    name: "grapes",
+    price: 120,
+  },
+  {
+    name: "orange",
+    price: 200,
+  },
+];
+
+const priceFilter = product.filter((ele) => ele.price <= 200);
+console.log(priceFilter);
+
+const result = product.reduce((sum, { price }) => sum + price, 0);
+console.log(result);
