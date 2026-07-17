@@ -229,3 +229,44 @@
 //     }
 //   })
 //   .catch((error) => console.log(error));
+
+// var str = " this is jeevan";
+// var index = [];
+
+// const len = str.length;
+// for (let i = 0; i < str.length; i++) {
+//   if (str[i] == " ") {
+//     index.push(i);
+//   }
+// }
+
+// const count = index.map((ele) => len - ele);
+
+// console.log(count);
+
+const string = "this is jeevan helecopter";
+
+let max = 0;
+let current = 0;
+var start = 0;
+var maxstart = 0;
+
+for (let i = 0; i < string.length; i++) {
+  if (string[i] === " ") {
+    if (current > max) {
+      max = current;
+      maxstart = start;
+    }
+    current = 0;
+    start = i + 1;
+  } else {
+    current++;
+  }
+}
+
+if (current > max) {
+  max = current;
+  maxstart = start;
+}
+
+console.log(string.substring(maxstart, maxstart + max));
