@@ -126,23 +126,106 @@
 
 // LRU least recently usedccahe
 
-const lru = {};
-let count = 0;
+// const lru = {};
+// let count = 0;
 
-function sub(a, b) {
-  const key = `${a}-${b}`;
-  if (!lru[key]) {
-    lru[key] = [];
-  }
-  count++;
-  let value = a - b;
+// function sub(a, b) {
+//   const key = `${a}-${b}`;
+//   if (!lru[key]) {
+//     lru[key] = [];
+//   }
+//   count++;
+//   let value = a - b;
 
-  let data = { value, count };
-  lru[key].push(data);
-  return value;
-}
-console.log(lru);
-console.log(sub(3, 4));
-console.log(sub(3, 4));
-console.log(sub(3, 4));
-console.log(lru);
+//   let data = { value, count };
+//   lru[key].push(data);
+//   return value;
+// }
+// console.log(lru);
+// console.log(sub(3, 4));
+// console.log(sub(3, 4));
+// console.log(sub(3, 4));
+// console.log(lru);
+
+// factorail
+
+// function fact(n) {
+//   if (n === 0 || n === 1) return 1;
+//   else {
+//     return n * fact(n - 1);
+//   }
+// }
+
+// console.log(fact(10));
+
+// fibnosis
+
+// function fibnosis(n) {
+//   if (n === 0) return 0;
+//   if (n === 1) return 1;
+
+//   return fibnosis(n - 1) + fibnosis(n - 2);
+// }
+// console.log(fibnosis(10));
+
+// 10
+
+// console.log([] + []);
+// console.log([] == false);
+// console.log(null == undefined);
+// console.log(typeof null);
+
+// for (var i = 0; i < 3; i++) {
+//   setTimeout(() => console.log(i), 100);
+// }
+
+// for (var i = 0; i < 3; i++) {
+//   (function (x) {
+//     setTimeout(() => console.log(x), 100);
+//   })(i);
+// }
+
+// var a;
+
+// console.log(a);
+// a = 10;
+// console.log(b);
+
+// let b = 20;
+
+// check prime
+
+// function checkPrime(n) {
+//   if (n < 2) return 0;
+
+//   for (let i = 2; i <= Math.sqrt(n); i++) {
+//     if (n % i === 0) {
+//       return false;
+//     }
+//   }
+
+//   return true;
+// }
+
+// console.log(checkPrime(23));
+
+// var num = 12;
+
+// const checkEven = new Promise((resolve, reject) => {
+//   if (num % 2 === 0) {
+//     resolve(num);
+//   } else {
+//     reject(num);
+//   }
+// })
+//   .catch((num) => {
+//     return num + 1;
+//   })
+//   .then((num) => {
+//     if (num % 2 == 0) {
+//       console.log("even");
+//     } else {
+//       throw new Error("odd");
+//     }
+//   })
+//   .catch((error) => console.log(error));
